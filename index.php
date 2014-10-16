@@ -34,7 +34,9 @@
 </div>
 <div class="main">
 
-    <div id="loginBtn" onclick="login()">登录</div>
+    <div>
+        <button id="loginBtn"></button>
+    </div>
 
     <div id="userInfo">
         <p>用户信息</p>
@@ -52,6 +54,10 @@
 <script>
     $('.footer').click(function (event) {
         location.href = "http://"+location.hostname+location.pathname+"order_detail.php";
+    });
+
+    $('#loginBtn').click(function (event) {
+        isLogin()?logout():login();
     });
 
     //登陆成功后的处理函数
@@ -82,9 +88,9 @@
     }
 
     function displayUserInfo(){
-        if(getCookie('bd_uid') == null) {
+        if(!isLogin()) {
             $('#userInfo').hide();
-            $('#loginBtn').show();
+            $('#loginBtn').text('登录');
         } else {
             $('#user_portrait')[0].src = 'http://tb.himg.baidu.com/sys/portrait/item/'+getCookie('bd_portrait')
             $('#access_token').text(getCookie('bd_access_token'));
@@ -92,7 +98,7 @@
             $('#username').text(getCookie('bd_username'));
 
             $('#userInfo').show();
-            $('#loginBtn').hide();
+            $('#loginBtn').text('退出');
         }
     }
 
@@ -121,6 +127,15 @@
         }
     }
 
+    function isLogin(){
+        return getCookie('bd_uid') !== null;
+    }
+
+    function logout(){
+        delCookie('bd_uid');
+        displayUserInfo();
+    }
+
     function getCookie(name)
     {
         var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -130,6 +145,15 @@
             return unescape(arr[2]);
         else
             return null;
+    }
+
+    function delCookie(name)
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1000);
+        var cval=getCookie(name);
+        if(cval!=null)
+            document.cookie= name + "="+cval+";expires="+exp.toGMTString()+";path=/";
     }
 
     displayUserInfo();
