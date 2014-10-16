@@ -6,6 +6,10 @@
  * Time: 下午12:25
  */
 
+if (!defined("SERVER_ROOT")) {
+    define("SERVER_ROOT", str_replace('ordersys_pay_url.php','',"http://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']));
+}
+
 if (!defined("FILE_ROOT")) {
     define("FILE_ROOT", dirname(__FILE__) . DIRECTORY_SEPARATOR);
 }
@@ -13,9 +17,9 @@ if (!defined("FILE_ROOT")) {
 require_once(FILE_ROOT . 'inc/pay_api.inc.php');
 
 $order_no = "test-".strtotime(date('Y-m-d H:i:s'));
-$return_url = FILE_ROOT ."pay_return_url.php";
-$page_url = FILE_ROOT ."pay_success.php";
-$order_source_url = FILE_ROOT ."index.php";
+$return_url = SERVER_ROOT ."pay_return_url.php";
+$page_url = SERVER_ROOT ."pay_success.php";
+$order_source_url = SERVER_ROOT ."index.php";
 
 if(isset($_POST['params'])){
     $post_params = json_decode($_POST['params'],true);
