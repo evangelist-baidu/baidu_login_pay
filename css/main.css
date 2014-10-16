@@ -1,0 +1,36 @@
+.header{
+    max-height: 45px;
+    line-height: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #383838;
+    color:white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    background-color: #FF533C;
+    color:white;
+    font-size: 18px;
+    line-height: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.main{
+    position: absolute;
+    top:45px;
+    left: 0px;
+    bottom:45px;
+    width: 100%;
+}
