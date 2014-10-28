@@ -85,10 +85,10 @@ function makePostParamsUrl($params)
         if (is_string($sign)) {
             $arr_temp = array();
             foreach ($params as $key => $val) {
-                $arr_temp[] = $key . '=' . $val;
+                $arr_temp[$key]= $val;
             }
-            $str_url = implode('&', $arr_temp);
-            $str_url .= '&sign=' . $sign;
+            $arr_temp['sign'] = $sign;
+            $str_url = http_build_query($arr_temp);
             return $str_url;
         } else {
             return false;
