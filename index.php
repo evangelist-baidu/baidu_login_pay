@@ -21,8 +21,7 @@
 
     <script type="text/javascript">
         clouda.lightInit({
-            ak: 'XkC0UKL8Z0cEP5zqKHuc8lIt',
-//                '<?//=$lightapp_api_key?>//',
+            ak: '<?=$lightapp_api_key?>',
             module: ["account"]
         });
     </script>
@@ -74,7 +73,7 @@
     function login(){
         //使用轻应用登陆接口登陆
         clouda.mbaas.account.login({
-            redirect_uri: "http://"+location.hostname+location.pathname+"login_redirect.php",
+            redirect_uri: location.href.replace(/(.*\/).*/, "$1")+"login_redirect.php",
             scope:'basic',
             // mobile: mobile,
             display: 'mobile',
