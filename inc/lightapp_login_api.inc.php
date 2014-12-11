@@ -4,7 +4,7 @@
  */
 
 //轻应用api key
-$lightapp_api_key = 'XkC0UKL8Z0cEP5zqKHuc8lIt';
+$lightapp_api_key = 'xSVGdbmft9tBjwqYPcxDq6Gg';
 
 //轻应用secret key
-$ligthapp_secret_key = '1n15EeGKLTViyP9D2G3iZoX49EAcGhqx';
+$ligthapp_secret_key = 'ZpSTiZFLEbp2riu3fs3z4tuz2XbE0vd3';
