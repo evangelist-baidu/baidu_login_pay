@@ -22,6 +22,8 @@
         clouda.lightInit({
             ak: '<?=$lightapp_api_key?>',
             module: ["account"]
+        },function(){
+            clouda.lego.smartBar.adjustPanel({"selector":"#bottomBar"});
         });
     </script>
 
@@ -45,7 +47,7 @@
     </div>
 
 </div>
-<div class="footer">
+<div class="footer" id="bottomBar">
     查看购物车
 </div>
 </body>
