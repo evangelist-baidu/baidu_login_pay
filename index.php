@@ -15,7 +15,7 @@
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css"/>
 
-    //注意 应用首页代码,从该轻应用-》状态信息-》编辑中获取，用于提交轻应用时验证用。
+<!--    注意 应用首页代码,从该轻应用-》状态信息-》编辑中获取，用于提交轻应用时验证用。-->
     <script type="text/javascript" name="baidu-tc-cerfication" data-appid="5022168" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
 
     <script type="text/javascript">
