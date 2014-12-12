@@ -1,5 +1,27 @@
 <?php
     require_once('./inc/lightapp_login_api.inc.php');
+
+    errorLog($_SERVER);
+
+
+//log
+function errorLog($msg) {
+    if(is_array($msg) || is_object($msg))
+    {
+        $msg = var_export($msg,true);
+    }
+
+    $time = date("Y-m-d H:i:s");
+    $logInfo = sprintf("\n%s\n%s",$time, $msg);
+    error_log($logInfo);
+}
+
+
+function devErrorLog($symbolname,$msg) {
+    if(defined($symbolname)) {
+        errorLog($msg);
+    }
+}
 ?>
 
 <!DOCTYPE html>
