@@ -171,7 +171,9 @@
         }
 
         if(getCookie('testCookie') == null) {
-            alert('禁用了cookie');
+            alert('禁用了cookie。禁用cookie会导致百度登录失败。');
+        } else {
+            alert('继续试用demo！');
         }
 
         delCookie('testCookie');
