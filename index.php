@@ -156,7 +156,28 @@
             document.cookie= name + "="+cval+";expires="+exp.toGMTString()+";path=/";
     }
 
+    function setCookie (name, value)
+    {
+        document.cookie = name + "=" + escape(value) +";path=/" ;
+    }
+
+
+
     displayUserInfo();
+
+    function checkCookie(){
+        if(getCookie('testCookie') == null) {
+            setCookie('testCookie',1);
+        }
+
+        if(getCookie('testCookie') == null) {
+            alert('禁用了cookie');
+        }
+
+        delCookie('testCookie');
+    }
+
+    checkCookie();
 
 </script>
 </html>
