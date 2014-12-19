@@ -21,7 +21,7 @@
     <script type="text/javascript">
         clouda.lightInit({
             ak: '<?=$lightapp_api_key?>',
-            module: ["account"]
+            module: ["account","smartBar"]
         },function(){
             clouda.lego.smartBar.adjustPanel({"selector":"#bottomBar"});
         });
