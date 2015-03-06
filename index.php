@@ -53,23 +53,12 @@
 </body>
 <script>
     $('.footer').click(function (event) {
-        location.href = "http://"+location.hostname+location.pathname+"order_detail.php";
+        location.href = "http://"+location.hostname+"/order_detail.php";
     });
 
     $('#loginBtn').click(function (event) {
         isLogin()?logout():login();
     });
-
-    //登陆成功后的处理函数
-    function onSuccess(){
-        clouda.mbaas.account.closeLoginDialog();
-        displayUserInfo();
-    }
-
-    //登陆页面点击“回退”后的处理函数
-    function onFail() {
-        alert('没有登录成功！');
-    }
 
     function login(){
         //使用轻应用登陆接口登陆
@@ -80,10 +69,7 @@
             display: 'mobile',
             login_mode: 1,
             login_type:'sms',
-            state:'hello_state',
-            onsuccess: onSuccess,
-            onfail: onFail
-
+            state:'hello_state'
         });
     }
 

@@ -37,14 +37,9 @@ if (is_array($tokenArr)) {
     }
 }
 
+header("Location:".'http://'.$_SERVER['HTTP_HOST'].'/index.php');
+
+
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<script>
-    window.parent.onSuccess();
-</script>
-</body>
-</html>
